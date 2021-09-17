@@ -28,23 +28,27 @@ endpoint which the Datadog agent can scrape to get the metrics. All that is requ
 find the metrics.
 
 Given that your application is exposing metrics on port 8080 your pod should contain the following annotations.
+
 ```yaml
 ```
 
-Check the oficial [Datadog Logging Documentation](https://docs.datadoghq.com/agent/kubernetes/prometheus/) for more detailed information.
+Check the official [Datadog Logging Documentation](https://docs.datadoghq.com/agent/kubernetes/prometheus/) for more detailed information.
 
 ### Tracing
 
 Datadog tracing is done with Application Performance Monitoring (APM), which sends traces from an application to Datadog. For traces to work the
-application needs to be configured with the language specific libraries. Check the [Langugage
-Documentation](https://docs.datadoghq.com/tracing/setup_overview/) for language specific instructions. Some of the languages that are supported are.
-* Golang
-* C#
-* Java
-* Python
+application needs to be configured with the language specific libraries.
+Check the [Language Documentation](https://docs.datadoghq.com/tracing/setup_overview/) for language specific instructions.
+Some of the languages that are supported are.
+
+- Golang
+- C#
+- Java
+- Python
 
 Configure your Deployment with the `DD_AGENT_HOST` environment for the APM agent to know where to send the traces.
-```
+
+```.yaml
 apiVersion: apps/v1
 kind: Deployment
 spec:
@@ -56,4 +60,4 @@ spec:
               fieldPath: status.hostIP
 ```
 
-Check the oficial [Datadog Tracing Documentation](https://docs.datadoghq.com/agent/kubernetes/apm/?tab=helm) for more detailed information.
+Check the official [Datadog Tracing Documentation](https://docs.datadoghq.com/agent/kubernetes/apm/?tab=helm) for more detailed information.
