@@ -20,6 +20,7 @@ module.exports = {
             "xks/developer-guide/best-practices",
             "xks/developer-guide/ingress",
             "xks/developer-guide/cd",
+            "xks/developer-guide/monitoring",
             "xks/developer-guide/security",
             "xks/developer-guide/linkerd",
             "xks/developer-guide/flux",
